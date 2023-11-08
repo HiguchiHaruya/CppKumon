@@ -1,4 +1,4 @@
-
+﻿
 #include "stdafx.h"
 #include "TaskBase.h"
 
@@ -7,7 +7,7 @@ using namespace Task;
 int		TaskBase::AddChild(std::shared_ptr<TaskBase> task)
 {
 	_childs.push_back(task);
-	return _childs.size() - 1;
+	return (int)_childs.size() - 1;
 }
 
 void	TaskBase::RemoveChild(std::shared_ptr<TaskBase> task)

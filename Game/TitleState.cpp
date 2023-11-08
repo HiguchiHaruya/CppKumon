@@ -1,4 +1,4 @@
-
+Ôªø
 #include "stdafx.h"
 #include "MainGameSequence.h"
 #include "TitleState.h"
@@ -10,9 +10,9 @@ void TitleState::Enter()
 
 void TitleState::Loop()
 {
-	DrawString(50, 50, "É^ÉCÉgÉã", GetColor(255, 255, 255));
+	DrawString(50, 50, "„Çø„Ç§„Éà„É´", GetColor(255, 255, 255));
 
-	DrawString(250, 250, "ENTERÇ≈éüÇÃÉVÅ[Éì", GetColor(255, 255, 255));
+	DrawString(250, 250, "ENTER„ÅßÊ¨°„ÅÆ„Ç∑„Éº„É≥", GetColor(255, 255, 255));
 
 	if (CheckHitKey(KEY_INPUT_RETURN))
 	{

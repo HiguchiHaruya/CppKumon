@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <memory>
 
 //https://cflat-inc.hatenablog.com/entry/2014/03/04/214608

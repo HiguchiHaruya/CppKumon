@@ -79,7 +79,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>DxLib;$(LibraryPath)</LibraryPath>
-    <IncludePath>DxLib;$(IncludePath)</IncludePath>
+    <IncludePath>DxLib;.\;Foundation;Game;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -153,31 +153,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="BulletManager.cpp" />
+    <ClCompile Include="Foundation\State.cpp" />
+    <ClCompile Include="Foundation\TaskBase.cpp" />
+    <ClCompile Include="Foundation\TaskManager.cpp" />
+    <ClCompile Include="Game\Bullet.cpp" />
+    <ClCompile Include="Game\BulletManager.cpp" />
+    <ClCompile Include="Game\MainGameSequence.cpp" />
+    <ClCompile Include="Game\MainGameState.cpp" />
+    <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Game\TitleState.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="State.cpp" />
-    <ClCompile Include="MainGameState.cpp" />
-    <ClCompile Include="MainGameSequence.cpp" />
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="TaskBase.cpp" />
-    <ClCompile Include="TaskManager.cpp" />
-    <ClCompile Include="TitleState.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="BulletManager.h" />
     <ClInclude Include="DxLib\DxLib.h" />
-    <ClInclude Include="Singleton.h" />
-    <ClInclude Include="State.h" />
-    <ClInclude Include="MainGameState.h" />
-    <ClInclude Include="MainGameSequence.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Foundation\Singleton.h" />
+    <ClInclude Include="Foundation\State.h" />
+    <ClInclude Include="Foundation\TaskBase.h" />
+    <ClInclude Include="Foundation\TaskManager.h" />
+    <ClInclude Include="Game\Bullet.h" />
+    <ClInclude Include="Game\BulletManager.h" />
+    <ClInclude Include="Game\MainGameSequence.h" />
+    <ClInclude Include="Game\MainGameState.h" />
+    <ClInclude Include="Game\Player.h" />
+    <ClInclude Include="Game\TitleState.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="TaskBase.h" />
-    <ClInclude Include="TaskManager.h" />
-    <ClInclude Include="TitleState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "State.h"
 
 enum MAIN_GAME_SEQUENCE

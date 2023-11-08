@@ -24,76 +24,76 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TaskBase.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="MainGameSequence.cpp">
-      <Filter>ソース ファイル\State</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClCompile>
-    <ClCompile Include="MainGameState.cpp">
-      <Filter>ソース ファイル\State</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleState.cpp">
-      <Filter>ソース ファイル\State</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="BulletManager.cpp">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskManager.cpp">
-      <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Bullet.cpp">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\BulletManager.cpp">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Player.cpp">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\MainGameSequence.cpp">
+      <Filter>ソース ファイル\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\MainGameState.cpp">
+      <Filter>ソース ファイル\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\TitleState.cpp">
+      <Filter>ソース ファイル\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\State.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\TaskBase.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\TaskManager.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TaskBase.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGameSequence.h">
-      <Filter>ソース ファイル\State</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGameState.h">
-      <Filter>ソース ファイル\State</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleState.h">
-      <Filter>ソース ファイル\State</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="BulletManager.h">
+    <ClInclude Include="Game\Bullet.h">
       <Filter>ソース ファイル\Task</Filter>
     </ClInclude>
-    <ClInclude Include="TaskManager.h">
+    <ClInclude Include="Game\BulletManager.h">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Player.h">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\MainGameSequence.h">
+      <Filter>ソース ファイル\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\MainGameState.h">
+      <Filter>ソース ファイル\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\TitleState.h">
+      <Filter>ソース ファイル\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\Singleton.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\State.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\TaskBase.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\TaskManager.h">
       <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
     <ClInclude Include="DxLib\DxLib.h">
       <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
