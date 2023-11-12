@@ -1,7 +1,6 @@
 #include <iostream>
 #include <memory>
-#include "DxLib.h"
-#include "TaskManager.h"
+#include "stdafx.h"
 #include "MainGameSequence.h"
 
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
@@ -23,7 +22,11 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	//ゲームシーケンス作成
 	auto gameSequence = std::make_shared<MainGameSequence>();
-	gameSequence->NextState(MAIN_GAME_SEQUENCE::TITLE); //タイトルから始まる
+	gameSequence->NextState(MAIN_GAME_SEQUENCE::INGAME); //タイトルから始まる
+
+	int tick = GetNowCount();
+	int fps = 0;
+	int fps_view = 0;
 
 	// ESCキーが押されるまでループ
 	while (CheckHitKey(KEY_INPUT_ESCAPE) == 0)
@@ -32,7 +35,24 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		ClearDrawScreen();
 		clsDx();
 
+		//TODO:本来は別スレッドで動かす
+		TaskManager::Run(RUN_TYPE::PHYSICS);
+
+		//メインスレッド
+		TaskManager::Run(RUN_TYPE::DO);
 		gameSequence->Loop();
+
+		//別スレッドでやってLoopは同期するとよいが、今そこまでしなくてもいい
+		TaskManager::Run(RUN_TYPE::DRAW);
+
+		fps++;
+		if (GetNowCount() - tick > 1000)
+		{
+			tick += 1000;
+			fps_view = fps;
+			fps = 0;
+		}
+		DrawFormatString(0, 0, GetColor(255, 255, 255), "FPS: %d", fps_view);
 
 		// 裏画面の内容を表画面に反映します
 		ScreenFlip();

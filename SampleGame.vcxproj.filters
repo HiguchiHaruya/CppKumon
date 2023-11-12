@@ -22,6 +22,9 @@
     <Filter Include="ソース ファイル\State">
       <UniqueIdentifier>{2e197e4f-2083-4fee-af10-5728bd247252}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Math">
+      <UniqueIdentifier>{beb4493d-060e-4e2a-9137-5744b1da3e91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -56,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="Foundation\TaskManager.cpp">
       <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponent2D.cpp">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMath.cpp">
+      <Filter>ソース ファイル\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +103,12 @@
     </ClInclude>
     <ClInclude Include="DxLib\DxLib.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponent2D.h">
+      <Filter>ソース ファイル\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMath.h">
+      <Filter>ソース ファイル\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

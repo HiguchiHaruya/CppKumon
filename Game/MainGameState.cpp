@@ -6,7 +6,9 @@
 
 void MainGameState::Enter()
 {
-
+	_player = std::make_shared<Player>();
+	_player->Transform.Position = Vector2(120, 350);
+	TaskManager::Register(_player);
 }
 
 void MainGameState::Loop()

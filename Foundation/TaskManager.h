@@ -28,6 +28,7 @@ namespace Task
 
 		TaskManager();
 
+		void Runner(RUN_TYPE type, std::shared_ptr<TaskBase> current);
 		void RunTypeAll(RUN_TYPE type);
 		void RegisterTask(std::shared_ptr<TaskBase> task, TASK_LAYER layer);
 		void DestroyTask(std::shared_ptr<TaskBase> task, TASK_LAYER layer);

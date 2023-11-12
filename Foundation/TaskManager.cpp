@@ -13,6 +13,10 @@ Task::TaskManager* GetTaskManagerInstance()
 
 TaskManager::TaskManager()
 {
+	for (int i = 0; i < TASK_LAYER::MAX_LAYER; ++i)
+	{
+		_rootTask[i] = std::make_shared<TaskBase>();
+	}
 }
 
 void TaskManager::Run(RUN_TYPE type)
@@ -43,26 +47,41 @@ void TaskManager::Release()
 	_instance.release();
 }
 
+void TaskManager::Runner(RUN_TYPE type, std::shared_ptr<TaskBase> current)
+{
+	switch (type)
+	{
+	case RUN_TYPE::DO:
+		//初期化系
+		if (current->_init)
+		{
+			current->Start();
+			current->_init = false;
+		}
+		current->Do();
+		break;
 
+	case RUN_TYPE::DRAW:
+		current->Draw();
+		break;
+
+	case RUN_TYPE::PHYSICS:
+		current->Physics();
+		break;
+	}
+
+	auto childs = current->GetChilds();
+	for (std::shared_ptr<TaskBase> c : childs)
+	{
+		Runner(type, c);
+	}
+};
 
 void TaskManager::RunTypeAll(RUN_TYPE type)
 {
 	for (int i = 0; i < TASK_LAYER::MAX_LAYER; ++i)
 	{
-		switch (type)
-		{
-		case RUN_TYPE::DO:
-			_rootTask[i]->Do();
-			break;
-
-		case RUN_TYPE::DRAW:
-			_rootTask[i]->Draw();
-			break;
-
-		case RUN_TYPE::PHYSICS:
-			_rootTask[i]->Physics();
-			break;
-		}
+		Runner(type, _rootTask[i]);
 	}
 }
 
