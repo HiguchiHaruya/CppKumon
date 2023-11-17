@@ -38,6 +38,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		//TODO:本来は別スレッドで動かす
 		TaskManager::Run(RUN_TYPE::PHYSICS);
 
+
 		//メインスレッド
 		TaskManager::Run(RUN_TYPE::DO);
 		gameSequence->Loop();

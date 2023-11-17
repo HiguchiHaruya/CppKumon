@@ -2,11 +2,15 @@
 #include "State.h"
 
 #include "Player.h"
+#include "Enemy.h"
 
 
 class MainGameState : public State
 {
+#define MAX_ENEMY 5
+
 	std::shared_ptr<Player> _player;
+	std::shared_ptr<Enemy> _enemy[MAX_ENEMY];
 
 public:
 	explicit MainGameState(std::weak_ptr<StateControl> ctrl)
