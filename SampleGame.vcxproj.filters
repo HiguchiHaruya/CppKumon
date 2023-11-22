@@ -22,7 +22,7 @@
     <Filter Include="ソース ファイル\State">
       <UniqueIdentifier>{2e197e4f-2083-4fee-af10-5728bd247252}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Math">
+    <Filter Include="ソース ファイル\Base\Math">
       <UniqueIdentifier>{beb4493d-060e-4e2a-9137-5744b1da3e91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -60,17 +60,17 @@
     <ClCompile Include="Foundation\TaskManager.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
-    <ClCompile Include="GameComponent2D.cpp">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMath.cpp">
-      <Filter>ソース ファイル\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="SysPhysics.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>ソース ファイル\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\GameComponent2D.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\GameMath.cpp">
+      <Filter>ソース ファイル\Base\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\SysPhysics.cpp">
+      <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,17 +110,17 @@
     <ClInclude Include="DxLib\DxLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameComponent2D.h">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMath.h">
-      <Filter>ソース ファイル\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="SysPhysics.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>ソース ファイル\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\GameComponent2D.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\GameMath.h">
+      <Filter>ソース ファイル\Base\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\SysPhysics.h">
+      <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

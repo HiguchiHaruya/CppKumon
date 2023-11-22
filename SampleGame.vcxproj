@@ -157,7 +157,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Foundation\GameComponent2D.cpp" />
+    <ClCompile Include="Foundation\GameMath.cpp" />
     <ClCompile Include="Foundation\State.cpp" />
+    <ClCompile Include="Foundation\SysPhysics.cpp" />
     <ClCompile Include="Foundation\TaskBase.cpp" />
     <ClCompile Include="Foundation\TaskManager.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
@@ -167,18 +170,18 @@
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\TitleState.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="GameMath.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="GameComponent2D.cpp" />
-    <ClCompile Include="SysPhysics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DxLib\DxLib.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Foundation\GameComponent2D.h" />
+    <ClInclude Include="Foundation\GameMath.h" />
     <ClInclude Include="Foundation\Singleton.h" />
     <ClInclude Include="Foundation\State.h" />
+    <ClInclude Include="Foundation\SysPhysics.h" />
     <ClInclude Include="Foundation\TaskBase.h" />
     <ClInclude Include="Foundation\TaskManager.h" />
     <ClInclude Include="Game\Bullet.h" />
@@ -187,10 +190,7 @@
     <ClInclude Include="Game\MainGameState.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\TitleState.h" />
-    <ClInclude Include="GameMath.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="GameComponent2D.h" />
-    <ClInclude Include="SysPhysics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
