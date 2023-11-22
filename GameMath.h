@@ -10,6 +10,10 @@ struct Vector2
 		float Y;
 		float H;
 	};
+	Vector2()
+	{
+		X = 0; Y = 0;
+	}
 
 	Vector2(float x, float y)
 	{
@@ -23,6 +27,12 @@ struct Vector3
 	float X;
 	float Y;
 	float Z;
+
+	Vector3()
+	{
+		X = 0; Y = 0; Z = 0;
+	}
+
 	Vector3(float x, float y, float z)
 	{
 		X = x;
