@@ -60,9 +60,6 @@
     <ClCompile Include="Foundation\TaskManager.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClCompile>
     <ClCompile Include="Foundation\GameComponent2D.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
@@ -71,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="Foundation\SysPhysics.cpp">
       <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Enemy.cpp">
+      <Filter>ソース ファイル\Task</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +110,6 @@
     <ClInclude Include="DxLib\DxLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClInclude>
     <ClInclude Include="Foundation\GameComponent2D.h">
       <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="Foundation\SysPhysics.h">
       <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Enemy.h">
+      <Filter>ソース ファイル\Task</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

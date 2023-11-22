@@ -156,7 +156,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Foundation\GameComponent2D.cpp" />
     <ClCompile Include="Foundation\GameMath.cpp" />
     <ClCompile Include="Foundation\State.cpp" />
@@ -165,6 +164,7 @@
     <ClCompile Include="Foundation\TaskManager.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
     <ClCompile Include="Game\BulletManager.cpp" />
+    <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\MainGameSequence.cpp" />
     <ClCompile Include="Game\MainGameState.cpp" />
     <ClCompile Include="Game\Player.cpp" />
@@ -176,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DxLib\DxLib.h" />
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Foundation\GameComponent2D.h" />
     <ClInclude Include="Foundation\GameMath.h" />
     <ClInclude Include="Foundation\Singleton.h" />
@@ -186,6 +185,7 @@
     <ClInclude Include="Foundation\TaskManager.h" />
     <ClInclude Include="Game\Bullet.h" />
     <ClInclude Include="Game\BulletManager.h" />
+    <ClInclude Include="Game\Enemy.h" />
     <ClInclude Include="Game\MainGameSequence.h" />
     <ClInclude Include="Game\MainGameState.h" />
     <ClInclude Include="Game\Player.h" />
