@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <memory>
 #include "stdafx.h"
 #include "MainGameSequence.h"
@@ -6,49 +6,57 @@
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				 LPSTR lpCmdLine, int nCmdShow )
 {
-	// ƒEƒCƒ“ƒhƒEƒ‚[ƒh‚É•ÏX
+	// ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã«å¤‰æ›´
 	ChangeWindowMode(TRUE);
 
-	if( DxLib_Init() == -1 )	// ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»ˆ—
+	if( DxLib_Init() == -1 )	// ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–å‡¦ç†
 	{
-		 return -1;				// ƒGƒ‰[‚ª‹N‚«‚½‚ç’¼‚¿‚ÉI—¹
+		 return -1;				// ã‚¨ãƒ©ãƒ¼ãŒèµ·ããŸã‚‰ç›´ã¡ã«çµ‚äº†
 	}
 
-	//ƒoƒbƒNƒoƒbƒtƒ@‚Ìİ’è
+	//ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	//‰Šú‰»
+	//åˆæœŸåŒ–
 	Task::TaskManager::Create();
 	SysPhysics::Create();
 
-	//ƒQ[ƒ€ƒV[ƒPƒ“ƒXì¬
+	//ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ä½œæˆ
 	auto gameSequence = std::make_shared<MainGameSequence>();
-	gameSequence->NextState(MAIN_GAME_SEQUENCE::INGAME); //ƒ^ƒCƒgƒ‹‚©‚çn‚Ü‚é
+	gameSequence->NextState(MAIN_GAME_SEQUENCE::TITLE); //ã‚¿ã‚¤ãƒˆãƒ«ã‹ã‚‰å§‹ã¾ã‚‹
 
+	//FPSè¨ˆæ¸¬
 	int tick = GetNowCount();
 	int fps = 0;
 	int fps_view = 0;
 
-	// ESCƒL[‚ª‰Ÿ‚³‚ê‚é‚Ü‚Åƒ‹[ƒv
+	// ESCã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã‚‹ã¾ã§ãƒ«ãƒ¼ãƒ—
 	while (CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
-		// ‰æ–Ê‚ğ‰Šú‰»
+		// ç”»é¢ã‚’åˆæœŸåŒ–
 		ClearDrawScreen();
 		clsDx();
 
+		//ã‚¿ã‚¹ã‚¯å‰Šé™¤
 		TaskManager::Run(RUN_TYPE::DESTROY);
 
-		//TODO:–{—ˆ‚Í•ÊƒXƒŒƒbƒh‚Å“®‚©‚·
+		//TODO:æœ¬æ¥ã¯åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ã§å‹•ã‹ã™
 		TaskManager::Run(RUN_TYPE::PHYSICS);
 
-		//ƒƒCƒ“ƒXƒŒƒbƒh
+		//ãƒ¡ã‚¤ãƒ³ã‚¹ãƒ¬ãƒƒãƒ‰
 		TaskManager::Run(RUN_TYPE::DO);
+
+		//å½“ãŸã‚Šåˆ¤å®š
 		SysPhysics::Run();
+		
+		//ãƒ¡ã‚¤ãƒ³ã‚·ãƒ¼ã‚±ãƒ³ã‚¹
 		gameSequence->Loop();
 
-		//•ÊƒXƒŒƒbƒh‚Å‚â‚Á‚ÄLoop‚Í“¯Šú‚·‚é‚Æ‚æ‚¢‚ªA¡‚»‚±‚Ü‚Å‚µ‚È‚­‚Ä‚à‚¢‚¢
+		//æç”»
+		//åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ã§ã‚„ã£ã¦Loopã¯åŒæœŸã™ã‚‹ã¨ã‚ˆã„ãŒã€ä»Šãã“ã¾ã§ã—ãªãã¦ã‚‚ã„ã„
 		TaskManager::Run(RUN_TYPE::DRAW);
 
+		//FPSè¨ˆæ¸¬ã¨è¡¨ç¤º
 		fps++;
 		if (GetNowCount() - tick > 1000)
 		{
@@ -58,21 +66,22 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		}
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "FPS: %d", fps_view);
 
-		// — ‰æ–Ê‚Ì“à—e‚ğ•\‰æ–Ê‚É”½‰f‚µ‚Ü‚·
+		//ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡åæ˜ 
 		ScreenFlip();
 
+		//ãƒ—ãƒ­ã‚»ã‚¹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å¾…ã¡
 		if (ProcessMessage() == -1)
 		{
-			// ƒGƒ‰[‚ª‹N‚«‚½‚çƒ‹[ƒv‚ğ”²‚¯‚é
+			// ã‚¨ãƒ©ãƒ¼ãŒèµ·ããŸã‚‰ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã‚‹
 			break;
 		}
 	}
 
-	//‰ğ•ú
+	//è§£æ”¾
 	SysPhysics::Release();
 	Task::TaskManager::Release();
 
-	// ‚c‚wƒ‰ƒCƒuƒ‰ƒŠg—p‚ÌI—¹ˆ—
+	// ï¼¤ï¼¸ãƒ©ã‚¤ãƒ–ãƒ©ãƒªä½¿ç”¨ã®çµ‚äº†å‡¦ç†
 	DxLib_End();
 
 	return 0 ;

@@ -18,21 +18,27 @@ Enemy::~Enemy()
 
 bool Enemy::HitCallback(std::shared_ptr<Collider2D> target)
 {
+	//タマ以外と当たっても無視
 	auto go = target->GetGameObject().lock();
 	if (go->GetObjectType<GameObjectType>() != GameObjectType::Bullet) return false;
 
+	//敵の弾なら無視
+	//NOTE: castしている
 	Bullet* ptr = static_cast<Bullet*>(go.get());
 	if (ptr->GetBulletForce() == GameObjectType::Enemy) return false;
 
+	//HPへらす
 	_hp--;
 	return true;
 }
 
 void Enemy::Start()
 {
+	//初期設定
 	_objectType = (int)GameObjectType::Enemy;
 	_hp = 0xBEEF;
 
+	//名前を読み込む
 	std::ifstream ifs("en_name.txt");
 	if (ifs)
 	{
@@ -50,6 +56,7 @@ void Enemy::Start()
 	}
 
 	Transform.Size = Vector2(40, 70);
+	//コリジョン生成
 	SetupAABB(Collider2D::ENEMY);
 }
 

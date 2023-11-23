@@ -16,10 +16,13 @@ Player::~Player()
 
 void Player::Start()
 {
+	//初期設定
 	_objectType = (int)GameObjectType::Player;
 	_hp = 0xEFBE;
 	_interval = 0;
 	Transform.Size = Vector2(50, 80);
+
+	//コリジョン生成
 	SetupAABB(Collider2D::PLAYER);
 }
 
@@ -56,12 +59,16 @@ void Player::Physics()
 
 bool Player::HitCallback(std::shared_ptr<Collider2D> target)
 {
+	//タマ以外と当たっても無視
 	auto go = target->GetGameObject().lock();
 	if (go->GetObjectType<GameObjectType>() != GameObjectType::Bullet) return false;
 
+	//プレイヤーの弾なら無視
+	//NOTE: castしている
 	Bullet* ptr = static_cast<Bullet*>(go.get());
 	if (ptr->GetBulletForce() == GameObjectType::Player) return false;
 
+	//HP減らす
 	_hp--;
 	return true;
 }

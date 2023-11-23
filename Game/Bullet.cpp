@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include "Bullet.h"
 
+//ビルダーで作って返す
 std::shared_ptr<Bullet> Bullet::CreateBullet(Vector2 force, GameComponent2D parent, Collider2D::COLLIDER_TAG tag)
 {
 	std::shared_ptr<Bullet> bullet = std::make_shared<Bullet>();
