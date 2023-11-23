@@ -18,6 +18,7 @@ namespace Task
 		DO,
 		DRAW,
 		PHYSICS,
+		DESTROY,
 	};
 
 	class TaskManager : public Singleton<TaskManager>
@@ -25,6 +26,7 @@ namespace Task
 		friend class Singleton<TaskManager>;
 
 		std::shared_ptr<TaskBase> _rootTask[MAX_LAYER];
+		std::vector<std::pair<std::shared_ptr<TaskBase>, TASK_LAYER>> _destroyList;
 
 		TaskManager();
 

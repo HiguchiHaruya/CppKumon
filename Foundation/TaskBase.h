@@ -4,11 +4,12 @@
 namespace Task
 {
 	class TaskManager;
-	class TaskBase 
+	class TaskBase
 	{
 	friend TaskManager;
 
 	private:
+		int     _layer;		//!<レイヤ
 		int		_priority;	//!<処理優先度
 		bool	_init;		//!<初期化
 
@@ -17,14 +18,17 @@ namespace Task
 
 	public:
 		TaskBase()
-			:_init(true)
+			:_init(false)
 			,_priority(0)
+			,_layer(0)
 			{}
 		virtual	~TaskBase() {};
 
 		int		AddChild(std::shared_ptr<TaskBase> task);
 		void	RemoveChild(std::shared_ptr<TaskBase> task);
 		const std::vector<std::shared_ptr<TaskBase>>& GetChilds() { return _childs; }
+
+		void Erase();	//タスクの削除
 
 		virtual	void Start() {};		//最初の一回目
 		virtual	void Do() {};			//メイン処理

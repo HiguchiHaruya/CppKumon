@@ -19,6 +19,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	//初期化
 	Task::TaskManager::Create();
+	SysPhysics::Create();
 
 	//ゲームシーケンス作成
 	auto gameSequence = std::make_shared<MainGameSequence>();
@@ -35,12 +36,14 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		ClearDrawScreen();
 		clsDx();
 
+		TaskManager::Run(RUN_TYPE::DESTROY);
+
 		//TODO:本来は別スレッドで動かす
 		TaskManager::Run(RUN_TYPE::PHYSICS);
 
-
 		//メインスレッド
 		TaskManager::Run(RUN_TYPE::DO);
+		SysPhysics::Run();
 		gameSequence->Loop();
 
 		//別スレッドでやってLoopは同期するとよいが、今そこまでしなくてもいい
@@ -66,6 +69,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	}
 
 	//解放
+	SysPhysics::Release();
 	Task::TaskManager::Release();
 
 	// ＤＸライブラリ使用の終了処理

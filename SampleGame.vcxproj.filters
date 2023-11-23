@@ -25,6 +25,9 @@
     <Filter Include="ソース ファイル\Base\Math">
       <UniqueIdentifier>{beb4493d-060e-4e2a-9137-5744b1da3e91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game">
+      <UniqueIdentifier>{491df1c7-40af-4c64-b513-76b97bd4b494}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -71,6 +74,12 @@
     </ClCompile>
     <ClCompile Include="Game\Enemy.cpp">
       <Filter>ソース ファイル\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\ThreadPool.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider2D.cpp">
+      <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +130,18 @@
     </ClInclude>
     <ClInclude Include="Game\Enemy.h">
       <Filter>ソース ファイル\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\ThreadPool.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider2D.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameObject.h">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameType.h">
+      <Filter>ソース ファイル\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

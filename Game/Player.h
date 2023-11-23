@@ -1,15 +1,14 @@
 ﻿#pragma once
 
-#include "TaskBase.h"
-#include "GameComponent2D.h"
-
-class Player : public Task::TaskBase {
+class Player : public IGameObject {
+	int _hp;
+	int _interval;
 
 public:
-	Player() {}
-	virtual	~Player() {};
+	Player();
+	virtual	~Player();
 
-	GameComponent2D Transform;
+	bool HitCallback(std::shared_ptr<Collider2D> target);
 
 	void Start();		//初期化
 	void Do();			//メイン処理

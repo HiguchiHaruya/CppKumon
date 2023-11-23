@@ -20,6 +20,19 @@ struct Vector2
 		X = x;
 		Y = y;
 	}
+
+	Vector2 operator + (Vector2 pos)
+	{
+		X += pos.X;
+		Y += pos.Y;
+		return *this;
+	}
+	Vector2 operator += (Vector2 pos)
+	{
+		X += pos.X;
+		Y += pos.Y;
+		return *this;
+	}
 };
 
 struct Vector3

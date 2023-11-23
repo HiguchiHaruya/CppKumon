@@ -1,15 +1,15 @@
 #pragma once
 
-#include "TaskBase.h"
-#include "GameComponent2D.h"
-
-class Enemy : public Task::TaskBase {
+class Enemy : public IGameObject {
+	char _name[8];
+	int _hp;
+	int _counter;
 
 public:
-	Enemy() {}
-	virtual	~Enemy() {};
+	Enemy();
+	virtual	~Enemy();
 
-	GameComponent2D Transform;
+	bool HitCallback(std::shared_ptr<Collider2D> target);
 
 	void Start();		//‰Šú‰»
 	void Do();			//ƒƒCƒ“ˆ—

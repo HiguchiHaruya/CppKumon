@@ -53,21 +53,38 @@ void TaskManager::Runner(RUN_TYPE type, std::shared_ptr<TaskBase> current)
 	{
 	case RUN_TYPE::DO:
 		//初期化系
-		if (current->_init)
+		if (!current->_init)
 		{
 			current->Start();
-			current->_init = false;
+			current->_init = true;
 		}
 		current->Do();
 		break;
 
 	case RUN_TYPE::DRAW:
-		current->Draw();
+		if (current->_init)
+		{
+			current->Draw();
+		}
 		break;
 
 	case RUN_TYPE::PHYSICS:
-		current->Physics();
+		if (current->_init)
+		{
+			current->Physics();
+		}
 		break;
+
+	case RUN_TYPE::DESTROY:
+	{
+		for (auto itr = _destroyList.begin(); itr != _destroyList.end(); ++itr) {
+			itr->first->Erase();
+			_rootTask[itr->second]->RemoveChild(itr->first);
+			itr->first.reset();
+		}
+		_destroyList.clear();
+	}
+	break;
 	}
 
 	auto childs = current->GetChilds();
@@ -87,10 +104,12 @@ void TaskManager::RunTypeAll(RUN_TYPE type)
 
 void TaskManager::RegisterTask(std::shared_ptr<TaskBase> task, TASK_LAYER layer)
 {
+	//
+	task->_layer = layer;
 	_rootTask[layer]->AddChild(task);
 }
 
 void TaskManager::DestroyTask(std::shared_ptr<TaskBase> task, TASK_LAYER layer)
 {
-	_rootTask[layer]->RemoveChild(task);
+	_destroyList.push_back(std::pair<std::shared_ptr<TaskBase>, TASK_LAYER>(task, layer));
 }
