@@ -1,7 +1,8 @@
-#pragma once
+﻿#pragma once
 
 struct Vector2
 {
+	//無名共用体をつかって、X,YとW,Hのメモリ配置を同じにする
 	union {
 		float X;
 		float W;

@@ -1,4 +1,4 @@
-
+ï»¿
 #include "stdafx.h"
 
 Collider2D::~Collider2D()
@@ -30,10 +30,10 @@ void Collider2D::SetCallback(std::function<bool(std::shared_ptr<Collider2D>)> ca
 
 bool AABBCollider::IsHit(std::shared_ptr<Collider2D> target)
 {
-	//“–‚½‚è•û
+	//å½“ãŸã‚Šæ–¹
 	switch (target->GetType())
 	{
-	//AABB‘ÎAABB
+	//AABBå¯¾AABB
 	case COLLIDER_TYPE::AABB:
 	{
 		auto link = target->GetGameObject();

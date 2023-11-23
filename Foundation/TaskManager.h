@@ -21,6 +21,7 @@ namespace Task
 		DESTROY,
 	};
 
+	//シングルトン化
 	class TaskManager : public Singleton<TaskManager>
 	{
 		friend class Singleton<TaskManager>;

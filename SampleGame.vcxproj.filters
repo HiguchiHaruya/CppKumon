@@ -45,9 +45,6 @@
     <ClCompile Include="Game\Bullet.cpp">
       <Filter>ソース ファイル\Task</Filter>
     </ClCompile>
-    <ClCompile Include="Game\BulletManager.cpp">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Player.cpp">
       <Filter>ソース ファイル\Task</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     <ClInclude Include="Game\Bullet.h">
       <Filter>ソース ファイル\Task</Filter>
     </ClInclude>
-    <ClInclude Include="Game\BulletManager.h">
-      <Filter>ソース ファイル\Task</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Player.h">
       <Filter>ソース ファイル\Task</Filter>
     </ClInclude>
@@ -131,9 +125,6 @@
     <ClInclude Include="Foundation\ThreadPool.h">
       <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
-    <ClInclude Include="IGameObject.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
     <ClInclude Include="GameType.h">
       <Filter>ソース ファイル\Game</Filter>
     </ClInclude>
@@ -148,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="Foundation\TaskBase.h">
       <Filter>ソース ファイル\Base\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\IGameObject.h">
+      <Filter>ソース ファイル\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

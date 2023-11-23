@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 class Enemy : public IGameObject {
 	char _name[8];
@@ -11,9 +11,9 @@ public:
 
 	bool HitCallback(std::shared_ptr<Collider2D> target);
 
-	void Start();		//‰Šú‰»
-	void Do();			//ƒƒCƒ“ˆ—
-	void Physics();		//‰‰Zˆ—
-	void Draw();		//•`‰æˆ—
-	void Release();		//‰ğ•ú
+	void Start();		//åˆæœŸåŒ–
+	void Do();			//ãƒ¡ã‚¤ãƒ³å‡¦ç†
+	void Physics();		//æ¼”ç®—å‡¦ç†
+	void Draw();		//æç”»å‡¦ç†
+	void Release();		//è§£æ”¾
 };

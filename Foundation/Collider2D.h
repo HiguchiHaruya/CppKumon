@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 class IGameObject;
 class SysPhysics;
@@ -40,7 +40,7 @@ public:
 
 	void SetCallback(std::function<bool(std::shared_ptr<Collider2D>)> callback);
 	void UpdateTag(COLLIDER_TAG tag);
-	virtual bool IsHit(std::shared_ptr<Collider2D> target) = 0; //target‚É‘Î‚µ‚Ä“–‚½‚Á‚Ä‚¢‚é‚©
+	virtual bool IsHit(std::shared_ptr<Collider2D> target) = 0; //targetã«å¯¾ã—ã¦å½“ãŸã£ã¦ã„ã‚‹ã‹
 };
 
 class AABBCollider : public Collider2D {
@@ -49,7 +49,7 @@ class AABBCollider : public Collider2D {
 public:
 	AABBCollider(std::weak_ptr<IGameObject> link) :
 		Collider2D(COLLIDER_TYPE::AABB, link) {}
-	bool IsHit(std::shared_ptr<Collider2D> target); //target‚É‘Î‚µ‚Ä“–‚½‚Á‚Ä‚¢‚é‚©
+	bool IsHit(std::shared_ptr<Collider2D> target); //targetã«å¯¾ã—ã¦å½“ãŸã£ã¦ã„ã‚‹ã‹
 };
 
 class OBBCollider : public Collider2D {

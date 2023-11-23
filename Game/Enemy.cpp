@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Enemy.h"
 #include "Bullet.h"
 
@@ -36,7 +36,7 @@ void Enemy::Start()
 	std::ifstream ifs("en_name.txt");
 	if (ifs)
 	{
-		//�Ǎ��T�C�Y�𒲂ׂ�B
+		//読込サイズを調べる。
 		ifs.seekg(0, std::ios::end);
 		long long int size = ifs.tellg();
 		ifs.seekg(0);

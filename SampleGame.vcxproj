@@ -165,7 +165,6 @@
     <ClCompile Include="Foundation\TaskManager.cpp" />
     <ClCompile Include="Foundation\ThreadPool.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
-    <ClCompile Include="Game\BulletManager.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\MainGameSequence.cpp" />
     <ClCompile Include="Game\MainGameState.cpp" />
@@ -189,13 +188,12 @@
     <ClInclude Include="Foundation\ThreadPool.h" />
     <ClInclude Include="GameType.h" />
     <ClInclude Include="Game\Bullet.h" />
-    <ClInclude Include="Game\BulletManager.h" />
     <ClInclude Include="Game\Enemy.h" />
+    <ClInclude Include="Game\IGameObject.h" />
     <ClInclude Include="Game\MainGameSequence.h" />
     <ClInclude Include="Game\MainGameState.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\TitleState.h" />
-    <ClInclude Include="IGameObject.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

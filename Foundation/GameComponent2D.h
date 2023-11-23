@@ -1,7 +1,8 @@
-#pragma once
+﻿#pragma once
 #include "GameMath.h"
 #include "TaskBase.h"
 
+//transform
 struct GameComponent2D
 {
 	Vector2 Position;

@@ -24,6 +24,7 @@ namespace Task
 			{}
 		virtual	~TaskBase() {};
 
+		//子供の追加
 		int		AddChild(std::shared_ptr<TaskBase> task);
 		void	RemoveChild(std::shared_ptr<TaskBase> task);
 		const std::vector<std::shared_ptr<TaskBase>>& GetChilds() { return _childs; }

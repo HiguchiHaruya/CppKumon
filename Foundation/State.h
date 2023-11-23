@@ -5,11 +5,11 @@ class StateControl;
 class State
 {
 protected:
-	std::weak_ptr<StateControl> _ctrl;
+	std::weak_ptr<StateControl> _ctrl; //循環参照になるのでweakで持つ
 
 	State() {}
 public:
-	explicit State(std::weak_ptr<StateControl> c) { _ctrl = c; };
+	explicit State(std::weak_ptr<StateControl> c): _ctrl(c){ }
 	virtual ~State() {};
 
 	virtual void Enter() = 0;

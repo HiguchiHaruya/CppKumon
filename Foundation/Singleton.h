@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <memory>
 
+//シングルトン
 //https://cflat-inc.hatenablog.com/entry/2014/03/04/214608
 template <class T>
 class Singleton

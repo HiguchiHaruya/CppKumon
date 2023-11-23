@@ -1,12 +1,16 @@
-
+﻿
 #include "stdafx.h"
 #include "SysPhysics.h"
 
+//NOTE: マルチスレッドにする予定だったが、少し悩ましい部分があるので保留
+
+//シングルトンインスタンス
 static std::unique_ptr<SysPhysics> _instance;
 SysPhysics* GetSysPhysicsInstance()
 {
 	return _instance.get();
 }
+
 
 SysPhysics::SysPhysics()
 {
@@ -14,11 +18,13 @@ SysPhysics::SysPhysics()
 	_colliders[(int)Collider2D::COLLIDER_TAG::BULLET].reserve(100);
 }
 
+//動いたオブジェクトの記録
 void SysPhysics::CalcStack(std::shared_ptr<Collider2D> collision)
 {
 	GetSysPhysicsInstance()->_calcStack.push_back(collision);
 }
 
+//特定のタグに登録されているオブジェクト全部と当たり判定を取る
 void SysPhysics::HitToAll(std::shared_ptr<Collider2D> collision, Collider2D::COLLIDER_TAG tag)
 {
 	for (auto itr = _colliders[(int)tag].begin(); itr != _colliders[(int)tag].end(); ++itr) {
@@ -30,6 +36,7 @@ void SysPhysics::HitToAll(std::shared_ptr<Collider2D> collision, Collider2D::COL
 	}
 }
 
+//処理実行
 void SysPhysics::Run()
 {
 	auto& removes = GetSysPhysicsInstance()->_removeList;
@@ -46,11 +53,12 @@ void SysPhysics::Run()
 		}
 	}
 
+	//動いているものだけ判定する
 	auto& calcStacks = GetSysPhysicsInstance()->_calcStack;
 	for (auto itr = calcStacks.begin(); itr != calcStacks.end(); ++itr) {
 
 		auto tag = (*itr)->GetTag();
-		//Matrix�͖{���͎���������̂��悢1
+		//Matrixは本来は自動化するのがよい1
 		switch (tag)
 		{
 		case Collider2D::COLLIDER_TAG::BULLET:

@@ -4,6 +4,7 @@
 
 using namespace Task;
 
+//シングルトンインスタンス
 static std::unique_ptr<Task::TaskManager> _instance;
 Task::TaskManager* GetTaskManagerInstance()
 {
@@ -104,7 +105,7 @@ void TaskManager::RunTypeAll(RUN_TYPE type)
 
 void TaskManager::RegisterTask(std::shared_ptr<TaskBase> task, TASK_LAYER layer)
 {
-	//
+	//レイヤの設定する
 	task->_layer = layer;
 	_rootTask[layer]->AddChild(task);
 }
