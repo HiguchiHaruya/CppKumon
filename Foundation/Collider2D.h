@@ -29,7 +29,7 @@ protected:
 	std::function<bool(std::shared_ptr<Collider2D>)> _hitCallback;
 	std::shared_ptr<Collider2D> GetPtr() { return shared_from_this(); }
 
-	Collider2D() {}
+	Collider2D():_type(COLLIDER_TYPE::INVALID_TYPE), _tag(COLLIDER_TAG::INVALID_TAG) {}
 public:
 	Collider2D(COLLIDER_TYPE type, std::weak_ptr<IGameObject> link);
 	virtual ~Collider2D();
@@ -56,14 +56,11 @@ class OBBCollider : public Collider2D {
 };
 
 class SphereCollider : public Collider2D {
-	Vector2 _pos;
 	float _radius;
 
-	SphereCollider() {}
-
+	SphereCollider() : _radius(0.0f) {}
 public:
-	SphereCollider(Vector2 p, float r);
-	void UpdatePos(Vector2 p) { _pos = p; }
+	SphereCollider(float radius, std::weak_ptr<IGameObject> link) :
+		Collider2D(COLLIDER_TYPE::SPHERE, link) { _radius = radius; }
 	void UpdateRadius(float r) { _radius = r; }
-	Vector2& GetPos() { return _pos; }
 };

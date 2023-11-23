@@ -14,6 +14,17 @@ std::shared_ptr<Bullet> Bullet::CreateBullet(Vector2 force, GameComponent2D pare
 	return bullet;
 }
 
+Bullet::Bullet()
+{
+	_force = Vector2(0,0);
+	_tag = Collider2D::INVALID_TAG;
+}
+
+Bullet::~Bullet()
+{
+
+}
+
 void Bullet::Start()
 {
 	Transform.Size = Vector2(70, 40);
@@ -55,8 +66,9 @@ bool Bullet::HitCallback(std::shared_ptr<Collider2D> target)
 
 void Bullet::Draw()
 {
-	DrawBox(Transform.Position.X - Transform.Size.W / 2, Transform.Position.Y - Transform.Size.H / 2,
-		Transform.Position.X + Transform.Size.W / 2, Transform.Position.Y + Transform.Size.H / 2,
+	DrawBox(
+		(int)(Transform.Position.X - Transform.Size.W / 2), (int)(Transform.Position.Y - Transform.Size.H / 2),
+		(int)(Transform.Position.X + Transform.Size.W / 2), (int)(Transform.Position.Y + Transform.Size.H / 2),
 		GetColor(64, 64, 64), TRUE);
 }
 

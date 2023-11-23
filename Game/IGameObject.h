@@ -22,6 +22,8 @@ protected:
 	}
 
 public:
+	IGameObject() : _objectType(0) {}
+
 	GameComponent2D Transform;
 
 	template<typename T>

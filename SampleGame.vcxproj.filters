@@ -28,6 +28,12 @@
     <Filter Include="ソース ファイル\Game">
       <UniqueIdentifier>{491df1c7-40af-4c64-b513-76b97bd4b494}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Base\Physics">
+      <UniqueIdentifier>{f05b55fa-9155-4d01-9d0d-064f64f1b27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Base\Task">
+      <UniqueIdentifier>{7bef8059-6d6b-42e7-9aa0-181da0ece967}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -57,20 +63,11 @@
     <ClCompile Include="Foundation\State.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Foundation\TaskBase.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="Foundation\TaskManager.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
     <ClCompile Include="Foundation\GameComponent2D.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
     <ClCompile Include="Foundation\GameMath.cpp">
       <Filter>ソース ファイル\Base\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Foundation\SysPhysics.cpp">
-      <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
     <ClCompile Include="Game\Enemy.cpp">
       <Filter>ソース ファイル\Task</Filter>
@@ -78,8 +75,17 @@
     <ClCompile Include="Foundation\ThreadPool.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Collider2D.cpp">
-      <Filter>ソース ファイル\Base</Filter>
+    <ClCompile Include="Foundation\Collider2D.cpp">
+      <Filter>ソース ファイル\Base\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\SysPhysics.cpp">
+      <Filter>ソース ファイル\Base\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\TaskBase.cpp">
+      <Filter>ソース ファイル\Base\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Foundation\TaskManager.cpp">
+      <Filter>ソース ファイル\Base\Task</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,12 +116,6 @@
     <ClInclude Include="Foundation\State.h">
       <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Foundation\TaskBase.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Foundation\TaskManager.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
     <ClInclude Include="DxLib\DxLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -125,16 +125,10 @@
     <ClInclude Include="Foundation\GameMath.h">
       <Filter>ソース ファイル\Base\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Foundation\SysPhysics.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Enemy.h">
       <Filter>ソース ファイル\Task</Filter>
     </ClInclude>
     <ClInclude Include="Foundation\ThreadPool.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Collider2D.h">
       <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
     <ClInclude Include="IGameObject.h">
@@ -142,6 +136,18 @@
     </ClInclude>
     <ClInclude Include="GameType.h">
       <Filter>ソース ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\Collider2D.h">
+      <Filter>ソース ファイル\Base\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\SysPhysics.h">
+      <Filter>ソース ファイル\Base\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\TaskManager.h">
+      <Filter>ソース ファイル\Base\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\TaskBase.h">
+      <Filter>ソース ファイル\Base\Task</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

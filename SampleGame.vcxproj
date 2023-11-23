@@ -156,7 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Collider2D.cpp" />
+    <ClCompile Include="Foundation\Collider2D.cpp" />
     <ClCompile Include="Foundation\GameComponent2D.cpp" />
     <ClCompile Include="Foundation\GameMath.cpp" />
     <ClCompile Include="Foundation\State.cpp" />
@@ -177,8 +177,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Collider2D.h" />
     <ClInclude Include="DxLib\DxLib.h" />
+    <ClInclude Include="Foundation\Collider2D.h" />
     <ClInclude Include="Foundation\GameComponent2D.h" />
     <ClInclude Include="Foundation\GameMath.h" />
     <ClInclude Include="Foundation\Singleton.h" />

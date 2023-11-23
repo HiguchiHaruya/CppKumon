@@ -71,8 +71,9 @@ void Player::Draw()
 	DrawString(50, 30, "Player", GetColor(64, 64, 255));
 	DrawFormatString(50, 50, GetColor(64, 64, 255), "HP: %X", _hp);
 
-	DrawBox(Transform.Position.X - Transform.Size.W / 2, Transform.Position.Y - Transform.Size.H / 2,
-		Transform.Position.X + Transform.Size.W / 2, Transform.Position.Y + Transform.Size.H / 2,
+	DrawBox(
+		(int)(Transform.Position.X - Transform.Size.W / 2), (int)(Transform.Position.Y - Transform.Size.H / 2),
+		(int)(Transform.Position.X + Transform.Size.W / 2), (int)(Transform.Position.Y + Transform.Size.H / 2),
 		GetColor(64, 64, 255), TRUE);
 }
 

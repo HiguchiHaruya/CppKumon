@@ -1,14 +1,14 @@
 ﻿#pragma once
 
-class Bullet : public TaskBase, public IGameObject {
+class Bullet : public IGameObject {
 
 	Collider2D::COLLIDER_TAG _tag;
 	Vector2 _force;
 	std::shared_ptr<Bullet> _self;
 
 public:
-	Bullet() {}
-	virtual	~Bullet() {};
+	Bullet();
+	virtual	~Bullet();
 
 	static std::shared_ptr<Bullet> CreateBullet(Vector2 force, GameComponent2D parent, Collider2D::COLLIDER_TAG tag);
 
