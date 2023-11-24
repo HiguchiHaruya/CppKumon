@@ -23,8 +23,8 @@ bool Enemy::HitCallback(std::shared_ptr<Collider2D> target)
 	if (go->GetObjectType<GameObjectType>() != GameObjectType::Bullet) return false;
 
 	//敵の弾なら無視
-	//NOTE: castしている
-	Bullet* ptr = static_cast<Bullet*>(go.get());
+	//NOTE: dynamic_castしている
+	Bullet* ptr = dynamic_cast<Bullet*>(go.get());
 	if (ptr->GetBulletForce() == GameObjectType::Enemy) return false;
 
 	//HPへらす
