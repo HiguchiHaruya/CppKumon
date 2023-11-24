@@ -3,7 +3,8 @@
 ## ビルドまでの手順
 
 1. DxLibをダウンロードする  
-
+ https://dxlib.xsrv.jp/DxLib/DxLib_VC3_24b.zip
+  
 2. フォルダをコピーしてくる  
 DxLib_VC内の「プロジェクトに追加すべきファイル_VC用」を「DxLib」にリネームし、プロジェクトと同じ階層に置く  
 
