@@ -29,9 +29,10 @@ public:
 	template<typename T>
 	T GetObjectType() { return (T)_objectType; }
 
-	void SetupAABB(Collider2D::COLLIDER_TAG tag)
+	template<typename T>
+	void SetupCollider(Collider2D::COLLIDER_TAG tag)
 	{
-		_collider = std::make_shared<AABBCollider>(std::weak_ptr<IGameObject>(GetPtr()));
+		_collider = std::make_shared<T>(std::weak_ptr<IGameObject>(GetPtr()));
 		_collider->UpdateTag(tag);
 		_collider->SetCallback(std::bind(&IGameObject::HitCallback, &(*this), std::placeholders::_1));
 		SysPhysics::Register(_collider, tag);

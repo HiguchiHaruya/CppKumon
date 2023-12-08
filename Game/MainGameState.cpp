@@ -11,14 +11,6 @@ void MainGameState::Enter()
 	_player->Transform.Position = Vector2(120, 350);
 	TaskManager::Register(_player);
 
-	//サンプル用に敵を1体だけに
-	_enemy[0] = std::make_shared<Enemy>();
-	_enemy[0]->Transform.Position = Vector2(520, 350);
-	TaskManager::Register(_enemy[0]);
-
-	//ここでおわり
-	return;
-
 	//NOTE:ランダムをほかで使うならシステム化する
 	//	   その場合はXORSHIFTも作っておく。
 	
@@ -36,6 +28,7 @@ void MainGameState::Enter()
 
 void MainGameState::Loop()
 {
+
 
 }
 

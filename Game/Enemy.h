@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 class Enemy : public IGameObject {
-	char _name[8];
+	std::array<char,8> _name;
 	int _hp;
 	int _counter;
 

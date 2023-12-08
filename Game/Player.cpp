@@ -23,7 +23,7 @@ void Player::Start()
 	Transform.Size = Vector2(50, 80);
 
 	//コリジョン生成
-	SetupAABB(Collider2D::PLAYER);
+	SetupCollider<AABBCollider>(Collider2D::PLAYER);
 }
 
 void Player::Do()
@@ -42,7 +42,12 @@ void Player::Do()
 
 	if (_interval == 0 && CheckHitKey(KEY_INPUT_SPACE))
 	{
-		auto bullet = Bullet::CreateBullet(Vector2(6,0), this->Transform, Collider2D::COLLIDER_TAG::PLAYER);
+		int mx, my;
+		GetMousePoint(&mx, &my);
+
+		Vector2 force = Vector2(mx - this->Transform.Position.X, my - this->Transform.Position.Y);
+		force.Normalize();
+		auto bullet = Bullet::CreateBullet(force * 6, this->Transform, Collider2D::COLLIDER_TAG::PLAYER);
 		_interval = 60;
 	}
 
@@ -82,6 +87,10 @@ void Player::Draw()
 		(int)(Transform.Position.X - Transform.Size.W / 2), (int)(Transform.Position.Y - Transform.Size.H / 2),
 		(int)(Transform.Position.X + Transform.Size.W / 2), (int)(Transform.Position.Y + Transform.Size.H / 2),
 		GetColor(64, 64, 255), TRUE);
+
+	int mx, my;
+	GetMousePoint(&mx, &my);
+	DrawBox(mx - 2, my - 2, mx + 2, my + 2, GetColor(64, 64, 64), TRUE);
 }
 
 void Player::Release()

@@ -9,7 +9,7 @@ Enemy::Enemy()
 {
 	_counter = 0;
 	_hp = 0;
-	memset(_name, 0x00, sizeof(char) * 8);
+	memset(&_name[0], 0x00, sizeof(char) * 8);
 }
 
 Enemy::~Enemy()
@@ -49,7 +49,7 @@ void Enemy::Start()
 
 		char* buff = new char[size+1] {0};
 		ifs.read(buff, size);
-		memcpy(_name, buff, size); //warning
+		memcpy(&_name[0], buff, size); //warning
 		delete[] buff;
 
 		ifs.close();
@@ -57,7 +57,7 @@ void Enemy::Start()
 
 	Transform.Size = Vector2(40, 70);
 	//コリジョン生成
-	SetupAABB(Collider2D::ENEMY);
+	SetupCollider<AABBCollider>(Collider2D::ENEMY);
 }
 
 void Enemy::Do()
@@ -82,7 +82,7 @@ void Enemy::Physics()
 
 void Enemy::Draw()
 {
-	DrawString(520, 30, _name, GetColor(255, 64, 64));
+	DrawString(520, 30, _name.data(), GetColor(255, 64, 64));
 	DrawFormatString(520, 50, GetColor(255, 64, 64), "HP: %d", _hp);
 
 	DrawBox(
