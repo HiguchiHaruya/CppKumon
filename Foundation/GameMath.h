@@ -6,6 +6,7 @@ struct Vector2
 	union {
 		float X;
 		float W;
+		float Radius;
 	};
 	union {
 		float Y;
@@ -33,6 +34,18 @@ struct Vector2
 		X += pos.X;
 		Y += pos.Y;
 		return *this;
+	}
+	Vector2 operator * (float f)
+	{
+		X *= f;
+		Y *= f;
+		return *this;
+	}
+	void Normalize()
+	{
+		float len = sqrtf(X * X + Y * Y);
+		X = X / len;
+		Y = Y / len;
 	}
 };
 

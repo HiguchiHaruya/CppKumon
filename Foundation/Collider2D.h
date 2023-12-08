@@ -7,7 +7,7 @@ public:
 	enum COLLIDER_TYPE {
 		INVALID_TYPE,
 		AABB,
-		SPHERE,
+		CIRCLE,
 		OBB
 	};
 
@@ -46,6 +46,7 @@ public:
 class AABBCollider : public Collider2D {
 
 	AABBCollider() {}
+	AABBCollider(AABBCollider&&) = delete;
 public:
 	AABBCollider(std::weak_ptr<IGameObject> link) :
 		Collider2D(COLLIDER_TYPE::AABB, link) {}
@@ -53,14 +54,13 @@ public:
 };
 
 class OBBCollider : public Collider2D {
-};
+}; 
 
-class SphereCollider : public Collider2D {
-	float _radius;
-
-	SphereCollider() : _radius(0.0f) {}
+class CircleCollider : public Collider2D {
+	CircleCollider(){}
+	CircleCollider(CircleCollider&&) = delete;
 public:
-	SphereCollider(float radius, std::weak_ptr<IGameObject> link) :
-		Collider2D(COLLIDER_TYPE::SPHERE, link) { _radius = radius; }
-	void UpdateRadius(float r) { _radius = r; }
+	CircleCollider(std::weak_ptr<IGameObject> link) :
+		Collider2D(COLLIDER_TYPE::CIRCLE, link) {}
+	bool IsHit(std::shared_ptr<Collider2D> target); //targetに対して当たっているか
 };
