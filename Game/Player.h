@@ -4,6 +4,14 @@ class Player : public IGameObject {
 	int _hp;
 	int _interval;
 
+	float _groundY;
+	float _speed;
+	float _extinc;
+	float _scale;
+	float _jumpPow;
+	float _jumpY;
+	float _grav;
+
 public:
 	Player();
 	virtual	~Player();
