@@ -1,4 +1,5 @@
 ﻿#include "stdafx.h"
+#include "Player.h"
 #include "Enemy.h"
 #include "Bullet.h"
 
@@ -9,7 +10,7 @@ Enemy::Enemy()
 {
 	_counter = 0;
 	_hp = 0;
-	memset(&_name[0], 0x00, sizeof(char) * 8);
+	_index = 0;
 }
 
 Enemy::~Enemy()
@@ -36,24 +37,7 @@ void Enemy::Start()
 {
 	//初期設定
 	_objectType = (int)GameObjectType::Enemy;
-	_hp = 0xBEEF;
-
-	//名前を読み込む
-	std::ifstream ifs("en_name.txt");
-	if (ifs)
-	{
-		//読込サイズを調べる。
-		ifs.seekg(0, std::ios::end);
-		long long int size = ifs.tellg();
-		ifs.seekg(0);
-
-		char* buff = new char[size+1] {0};
-		ifs.read(buff, size);
-		memcpy(&_name[0], buff, size); //warning
-		delete[] buff;
-
-		ifs.close();
-	}
+	_hp = 5;
 
 	Transform.Size = Vector2(40, 70);
 	//コリジョン生成
@@ -63,7 +47,9 @@ void Enemy::Start()
 void Enemy::Do()
 {
 	_counter++;
-	if (_counter > 20)
+	auto player = _player.lock();
+
+	if (_counter > 20 && (this->Transform.Position.X - player->Transform.Position.X < 320))
 	{
 		auto bullet = Bullet::CreateBullet(Vector2(-5, 0), this->Transform, Collider2D::COLLIDER_TAG::ENEMY);
 		_counter = 0;
@@ -82,8 +68,7 @@ void Enemy::Physics()
 
 void Enemy::Draw()
 {
-	DrawString(520, 30, _name.data(), GetColor(255, 64, 64));
-	DrawFormatString(520, 50, GetColor(255, 64, 64), "HP: %d", _hp);
+	DrawFormatString(520, 50 + _index * 20, GetColor(255, 64, 64), "HP: %d", _hp);
 
 	DrawBox(
 		(int)(Transform.Position.X - Transform.Size.W / 2), (int)(Transform.Position.Y - Transform.Size.H / 2),

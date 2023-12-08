@@ -1,15 +1,19 @@
 ﻿#pragma once
 
 class Enemy : public IGameObject {
-	std::array<char,8> _name;
+	int _index;
 	int _hp;
 	int _counter;
+
+	std::weak_ptr<Player> _player;
 
 public:
 	Enemy();
 	virtual	~Enemy();
 
 	bool HitCallback(std::shared_ptr<Collider2D> target);
+	void SetIndex(int index) { _index = index; }
+	void SetPlayer(std::weak_ptr<Player> p) { _player = p; }
 
 	void Start();		//初期化
 	void Do();			//メイン処理

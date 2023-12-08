@@ -82,7 +82,7 @@ void Player::Do()
 		Vector2 force = Vector2(mx - this->Transform.Position.X, my - this->Transform.Position.Y);
 		force.Normalize();
 		auto bullet = Bullet::CreateBullet(force * 6, this->Transform, Collider2D::COLLIDER_TAG::PLAYER);
-		_interval = 60;
+		_interval = 10;
 	}
 
 	if (_hp <= 0)

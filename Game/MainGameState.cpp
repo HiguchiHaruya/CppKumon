@@ -22,6 +22,8 @@ void MainGameState::Enter()
 	{
 		_enemy[i] = std::make_shared<Enemy>();
 		_enemy[i]->Transform.Position = Vector2((float)(280 + mt()%360), (float)(350 - (int)mt() % 150));
+		_enemy[i]->SetIndex(i + 1);
+		_enemy[i]->SetPlayer(std::weak_ptr<Player>(_player));
 		TaskManager::Register(_enemy[i]);
 	}
 }

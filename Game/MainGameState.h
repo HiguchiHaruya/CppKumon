@@ -7,7 +7,7 @@
 
 class MainGameState : public State
 {
-#define MAX_ENEMY 1 //test
+#define MAX_ENEMY 5
 
 	std::shared_ptr<Player> _player;
 	std::shared_ptr<Enemy> _enemy[MAX_ENEMY];
