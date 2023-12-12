@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+//プリコンパイルヘッダ
 #include <iostream>
 #include <memory>
 #include <functional>
@@ -9,7 +10,7 @@
 #include "TaskManager.h"
 using namespace Task;
 
-#include "GameComponent2D.h"
+#include "Transform.h"
 
 #include "Collider2D.h"
 #include "SysPhysics.h"

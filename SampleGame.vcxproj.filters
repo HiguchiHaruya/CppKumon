@@ -60,7 +60,7 @@
     <ClCompile Include="Foundation\State.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Foundation\GameComponent2D.cpp">
+    <ClCompile Include="Foundation\Transform.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
     <ClCompile Include="Foundation\GameMath.cpp">
@@ -113,7 +113,7 @@
     <ClInclude Include="DxLib\DxLib.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Foundation\GameComponent2D.h">
+    <ClInclude Include="Foundation\Transform.h">
       <Filter>ソース ファイル\Base</Filter>
     </ClInclude>
     <ClInclude Include="Foundation\GameMath.h">

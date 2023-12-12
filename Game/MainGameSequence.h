@@ -9,6 +9,10 @@ enum MAIN_GAME_SEQUENCE
 	MAX
 };
 
+/// <summary>
+/// ゲームシーンの管理
+/// NOTE: Unity/C#においてのSceneManagerと似た役割。シーン共通で持つオブジェクトなどをここに持たせることもできる。
+/// </summary>
 class MainGameSequence : public StateControl
 {
 

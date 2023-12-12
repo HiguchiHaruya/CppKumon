@@ -3,6 +3,10 @@
 #include "stdafx.h"
 #include "MainGameSequence.h"
 
+/// <summary>
+/// エントリポイント
+/// NOTE: Unity/C#において等価のコードはないが、ゲームループの仕組みは全てのゲームが必ず持つ実装である
+/// </summary>
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				 LPSTR lpCmdLine, int nCmdShow )
 {

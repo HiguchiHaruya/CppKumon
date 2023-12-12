@@ -1,5 +1,9 @@
 ﻿#pragma once
 
+/// <summary>
+/// ベクトルクラス(2D)
+/// NOTE: Unity/C#におけるVector2とほぼ同じです。X,YでもW,Hでも使えるようにしています。
+/// </summary>
 struct Vector2
 {
 	//無名共用体をつかって、X,YとW,Hのメモリ配置を同じにする
@@ -49,6 +53,10 @@ struct Vector2
 	}
 };
 
+/// <summary>
+/// ベクトルクラス(3D)
+/// NOTE: Unity/C#におけるVector3とほぼ同じです。使ってないので最小実装です。
+/// </summary>
 struct Vector3
 {
 	float X;

@@ -1,5 +1,10 @@
 ﻿#pragma once
 
+
+/// <summary>
+/// ゲームオブジェクトクラス
+/// NOTE: Unity/C#においてのGameObjectと似た役割。ただしGameObjectほど抽象化はされていない。
+/// </summary>
 class Collider2D;
 class IGameObject : public TaskBase, public std::enable_shared_from_this<IGameObject> {
 
@@ -24,7 +29,7 @@ protected:
 public:
 	IGameObject() : _objectType(0) {}
 
-	GameComponent2D Transform;
+	Transform2D Transform;
 
 	template<typename T>
 	T GetObjectType() { return (T)_objectType; }

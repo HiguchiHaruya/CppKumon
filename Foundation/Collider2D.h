@@ -2,6 +2,11 @@
 
 class IGameObject;
 class SysPhysics;
+
+/// <summary>
+/// 2Dコライダー基底
+/// NOTE: Unity/C#におけるコライダーコンポーネントとほぼ同じです。当たった際にイベントが実行されます。
+/// </summary>
 class Collider2D : public std::enable_shared_from_this<Collider2D> {
 public:
 	enum COLLIDER_TYPE {
@@ -43,6 +48,10 @@ public:
 	virtual bool IsHit(std::shared_ptr<Collider2D> target) = 0; //targetに対して当たっているか
 };
 
+/// <summary>
+/// AABBコライダー
+/// NOTE: Unity/C#におけるBoxCollider2Dとほぼ同じです。
+/// </summary>
 class AABBCollider : public Collider2D {
 
 	AABBCollider() {}
@@ -56,6 +65,10 @@ public:
 class OBBCollider : public Collider2D {
 }; 
 
+/// <summary>
+/// 円コライダー
+/// NOTE: Unity/C#におけるCircleColliderとほぼ同じです。
+/// </summary>
 class CircleCollider : public Collider2D {
 	CircleCollider(){}
 	CircleCollider(CircleCollider&&) = delete;

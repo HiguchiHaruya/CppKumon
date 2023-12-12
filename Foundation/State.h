@@ -1,6 +1,10 @@
 ﻿#pragma once
 #include <memory>
 
+/// <summary>
+/// ステートマシン
+/// NOTE: 汎用的なデザインパターン
+/// </summary>
 class StateControl;
 class State
 {

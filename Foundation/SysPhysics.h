@@ -6,6 +6,12 @@
 #include "GameMath.h"
 #include "Singleton.h"
 
+/// <summary>
+/// 物理システム
+/// NOTE: Unity/C#におけるPhysics Systemとほぼ同じです。ただしやっていることは限りなく少ないです。
+///       システム側で処理をすることであとから最適化をすることができます。
+///       シングルトン
+/// </summary>
 class SysPhysics : public Singleton<SysPhysics>
 {
 	friend class Singleton<SysPhysics>;

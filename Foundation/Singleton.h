@@ -1,8 +1,13 @@
 ﻿#pragma once
 #include <memory>
 
-//シングルトン
-//https://cflat-inc.hatenablog.com/entry/2014/03/04/214608
+
+/// <summary>
+/// シングルトン
+/// NOTE: 汎用的なデザインパターン
+/// コードの詳細は以下を参照のこと
+/// https://cflat-inc.hatenablog.com/entry/2014/03/04/214608
+/// </summary>
 template <class T>
 class Singleton
 {

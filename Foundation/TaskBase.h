@@ -3,6 +3,10 @@
 
 namespace Task
 {
+	/// <summary>
+	/// タスクの基底実装
+	/// NOTE: Unity/C#におけるMonoBehaviourと近いです。システムから一定のタイミングで処理の呼び出しが行われます。
+	/// </summary>
 	class TaskManager;
 	class TaskBase
 	{

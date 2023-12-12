@@ -5,6 +5,10 @@
 #include "Enemy.h"
 
 
+/// <summary>
+/// メインゲームシーン
+/// NOTE: Unity/C#においてのSceneと似た役割。インゲームのシーンに何を作るかを記述するものと考えるとよい
+/// </summary>
 class MainGameState : public State
 {
 #define MAX_ENEMY 5

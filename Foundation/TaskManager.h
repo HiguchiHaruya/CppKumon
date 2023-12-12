@@ -21,7 +21,11 @@ namespace Task
 		DESTROY,
 	};
 
-	//シングルトン化
+	/// <summary>
+	/// タスクの管理クラス実装
+	/// NOTE: Unity/C#におけるMonoBehaviourと近いです。タスクシステムを管理するクラスです。
+	///		  シングルトン
+	/// </summary>
 	class TaskManager : public Singleton<TaskManager>
 	{
 		friend class Singleton<TaskManager>;

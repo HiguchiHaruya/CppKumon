@@ -159,7 +159,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Foundation\Collider2D.cpp" />
-    <ClCompile Include="Foundation\GameComponent2D.cpp" />
+    <ClCompile Include="Foundation\Transform.cpp" />
     <ClCompile Include="Foundation\GameMath.cpp" />
     <ClCompile Include="Foundation\State.cpp" />
     <ClCompile Include="Foundation\SysPhysics.cpp" />
@@ -180,7 +180,7 @@
   <ItemGroup>
     <ClInclude Include="DxLib\DxLib.h" />
     <ClInclude Include="Foundation\Collider2D.h" />
-    <ClInclude Include="Foundation\GameComponent2D.h" />
+    <ClInclude Include="Foundation\Transform.h" />
     <ClInclude Include="Foundation\GameMath.h" />
     <ClInclude Include="Foundation\Singleton.h" />
     <ClInclude Include="Foundation\State.h" />

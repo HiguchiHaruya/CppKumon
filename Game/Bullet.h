@@ -1,5 +1,10 @@
 ﻿#pragma once
 
+/// <summary>
+///弾オブジェクト
+/// NOTE: Unity/C#において次のコードと等価。当たり判定の処理が違うが、これは当たり判定の仕組みが違うためである。
+/// https://github.com/vtn-team/2dActionSample/blob/master/Assets/Scripts/Bullet.cs
+/// </summary>
 class Bullet : public IGameObject {
 
 	Collider2D::COLLIDER_TAG _tag;
@@ -10,7 +15,7 @@ public:
 	Bullet();
 	virtual	~Bullet();
 
-	static std::shared_ptr<Bullet> CreateBullet(Vector2 force, GameComponent2D parent, Collider2D::COLLIDER_TAG tag);
+	static std::shared_ptr<Bullet> CreateBullet(Vector2 force, Transform2D parent, Collider2D::COLLIDER_TAG tag);
 
 	bool HitCallback(std::shared_ptr<Collider2D> target);
 

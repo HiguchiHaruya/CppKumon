@@ -1,5 +1,10 @@
 ﻿#pragma once
 
+/// <summary>
+/// プレイヤーオブジェクト
+/// NOTE: Unity/C#において次のコードと等価
+/// https://github.com/vtn-team/2dActionSample/blob/master/Assets/Scripts/Enemy.cs
+/// </summary>
 class Enemy : public IGameObject {
 	int _index;
 	int _hp;

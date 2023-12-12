@@ -1,5 +1,10 @@
 ﻿#pragma once
 
+/// <summary>
+/// プレイヤーオブジェクト
+/// NOTE: Unity/C#において次のコードと等価
+/// https://github.com/vtn-team/2dActionSample/blob/master/Assets/Scripts/Player.cs
+/// </summary>
 class Player : public IGameObject {
 	int _hp;
 	int _interval;
